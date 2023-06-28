@@ -9,10 +9,12 @@ const merkleTree = new MerkleTree(niceList);
 const root = merkleTree.getRoot();
 
 // find the proof that norman block is in the list 
+console.log( root)
+
 const name = 'Norman Block';
 const index = niceList.findIndex(n => n === name);
 const proof = merkleTree.getProof(index);
-
+console.log(proof)
 // verify proof against the Merkle Root
 console.log( verifyProof(proof, name, root) ); // true, Norman Block is in the list!
 
